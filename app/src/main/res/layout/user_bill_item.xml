@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Description"
+            android:lines="1"
+            android:id="@+id/tv_description"
+            android:layout_height="wrap_content"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="5 Unit"
+                android:lines="1"
+                android:id="@+id/tv_unit"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="X"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+
+                android:paddingRight="10dp"
+                android:textColor="@android:color/holo_red_dark"
+                android:lines="1"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="100 TK"
+                android:lines="1"
+                android:id="@+id/tv_rate"
+                android:layout_gravity="center"
+
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight=".8"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:text="500 BDT"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/tv_total"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

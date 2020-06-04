@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.doctor.telemedicine">
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/leaf"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/leaf"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.MySubsCribedPatients"></activity>
+        <activity android:name=".Activity.VideoCallAppointmentList" />
+        <activity android:name=".Activity.SubscriptionActivityPatient" />
+        <activity android:name=".Activity.PrescriptonRequestMakingActivity" />
+        <activity android:name=".Activity.PaymentDetails" />
+        <activity android:name=".Activity.ProjectPaypalPaymentActivity" />
+        <activity android:name=".Activity.GuideLineActivity" />
+        <activity android:name=".Activity.BillsActivity" />
+        <activity android:name=".Activity.ChatActivityCommon" />
+        <activity android:name=".Activity.ChatListActivity" />
+        <activity android:name=".Activity.PrescriptionDetailViewPatientActivity" />
+        <activity android:name=".Activity.ChangePasswordActivity" />
+        <activity android:name=".Activity.ForgotePasswordPhoneVerificationActivity" />
+        <activity android:name=".Activity.ForgotePasswordActivity" />
+        <activity android:name=".Activity.NotificationDetailActivity" />
+        <activity android:name=".Activity.NotificationActivity" />
+        <activity android:name=".Activity.NotificationActivityPatient" />
+        <activity android:name=".Activity.PlaceCallActivity" />
+        <activity android:name=".Activity.ImageFullScreenActivity" />
+        <activity android:name=".Activity.AddBlogActivity" />
+        <activity android:name=".Activity.AmbulanceDetailActivity" />
+        <activity android:name=".Activity.BlogDetailActivity" />
+        <activity android:name=".Activity.PrescriptionReviewBodyPatient" />
+        <activity android:name=".Activity.PrescriptionViewForReviewActivity" />
+        <activity android:name=".Activity.PatientPrescriptionRecheckActivity" />
+        <activity android:name=".Activity.PrescriptionReviewReplyActivity" />
+        <activity android:name=".Activity.AmbulanceActivity" />
+        <activity android:name=".Activity.EnjoyPregnancyDrListActivity" />
+        <activity android:name=".Activity.PublicAskByPatient" />
+        <activity android:name=".Activity.VideoCallHistoryPatientActivity" />
+        <activity android:name=".Activity.PhonVarificationActivity" />
+
+        <service android:name=".service.NotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Activity.SinchService" />
+
+        <activity android:name=".Activity.VoiceCallReceiveActivity" />
+        <activity android:name=".Activity.CallScreenActivity" />
+        <activity android:name=".Activity.VoiceCallDialActivity" />
+        <activity android:name=".Activity.ServingActivityDr" />
+        <activity
+            android:name=".Activity.PrescriptionReviewSendingActivity"
+            android:label="@string/title_activity_prescription_review_sending"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.DoctorsFullProfileView" />
+        <activity android:name=".Activity.DoctorsRegister" />
+        <activity android:name=".Activity.RecheckActivityDr" />
+        <activity android:name=".Activity.ChatActivityDr" />
+        <activity android:name=".Activity.PrescriptionGivingActivity" />
+        <activity android:name=".Activity.DrPrescriptionListActivity" />
+        <activity android:name=".Activity.DrChatActivity" />
+        <activity android:name=".Activity.PrescriptionActivityPatient" />
+        <activity android:name=".Activity.AdviceActivityPatient" />
+        <activity android:name=".Activity.PatientDiseaseSumActivity" />
+        <activity android:name=".Activity.TestRecomendationListActivity" />
+        <activity
+            android:name=".Activity.PatientPersonalInfoActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.SwipeNewActivity" />
+        <activity
+            android:name=".Activity.CallLogHistoryActivity"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.CallReceiveActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.DialingActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:label="Login"
+            android:theme="@style/NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.SignUpActivity"
+            android:label="SignUp"
+            android:parentActivityName=".Activity.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Activity.PhoneEnterActivityActivity"
+            android:label="SignUp"
+            android:parentActivityName=".Activity.LoginActivity" />
+        <activity
+            android:name=".Activity.CodeVerificationActivity"
+            android:label="Sign Up"
+            android:parentActivityName=".Activity.PhoneEnterActivityActivity" />
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.FindDoctorActivity"
+            android:label="Search Doctor"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.DoctorHomeActivity"
+            android:theme="@style/NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.SearchResultActivity"
+            android:label="Search Result"
+            android:parentActivityName=".Activity.FindDoctorActivity" />
+        <activity
+            android:name=".Activity.DrPersonalInfoActivity"
+            android:parentActivityName=".Activity.DoctorHomeActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.ChamberDetailActivity"
+            android:label="Book Appointment"
+            android:parentActivityName=".Activity.SearchResultActivity" />
+        <activity
+            android:name=".Activity.SendBookingActivity"
+            android:label="Booking Info"
+            android:parentActivityName=".Activity.ChamberDetailActivity" />
+        <activity
+            android:name=".Activity.RecomendationDetailActivity"
+            android:label="Test Recomendation"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.ConfirmedAppointmentDetailActivity"
+            android:label="Appointment detail"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ChamberInfoActivity" />
+        <activity
+            android:name=".Activity.DrChamberListActivity"
+            android:label="My Chambers"
+            android:parentActivityName=".Activity.DoctorHomeActivity" />
+        <activity android:name=".Activity.DrChemberActivity" />
+        <activity
+            android:name=".Activity.AdddChamberActivity"
+            android:label="Add Chamber"
+            android:parentActivityName=".Activity.DoctorHomeActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.BaseActivity" />
+        <activity
+            android:name=".Activity.VisitActivityDr"
+            android:label="Serve this Patient"
+            android:parentActivityName=".Activity.DoctorHomeActivity" />
+        <activity
+            android:name=".Activity.HistoryActivity"
+            android:label="History"
+            android:parentActivityName=".Activity.HomeActivity" />
+        <activity
+            android:name=".Activity.PatientNewHome"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.AppointmentsActivityPatient"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.PatientPendingActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.PatientConfirmedActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.PatientTestRecomActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.VideoCallPatientActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.DrNewHomeActivity"
+            android:theme="@style/NoTitleBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.DrAllAppointmentsActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.DrPendingActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.DrConfirmedActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.VideoCallActivityDr"
+            android:theme="@style/NoTitleBar" />
+        <activity android:name=".Activity.DepartmentsActivity" />
+        <activity android:name=".Activity.DrListActivity" />
+        <activity android:name=".Activity.ServicesActivityDr" />
+        <activity android:name=".Activity.DoctorsSwipeActivity" />
+        <activity
+            android:name=".Activity.PatientHomeActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.SpecialistActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Activity.OnlineDoctorsActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.OnlinDoctorsSwipeActivity" />
+        <activity android:name=".Activity.HomeActivityDrActivity" />
+        <activity
+            android:name=".Activity.AddNewChamberActivity"
+            android:theme="@style/NoTitleBar" />
+        <activity
+            android:name=".Activity.BookingActivityNew"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Activity.BookingConfirmActivity" />
+        <activity android:name=".Activity.RequestReviewActivityPatient" />
+        <activity android:name=".Activity.DrListGridActivity" />
+        <activity android:name=".Activity.PersonalPhysicianAcrivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".Activity.OnlineDocListActivity" />
+        <activity android:name=".Activity.NewDialingActivity" />
+        <activity android:name=".Activity.VideoCallUIActivity" />
+        <activity android:name=".Activity.IncommingVideoCallNewActivity" />
+        <activity android:name=".Activity.IncomingCallScreenActivity" />
+        <activity android:name=".Activity.VoiceDialActivity" />
+        <activity android:name=".Activity.VoiceCallIncomming" />
+        <activity android:name=".Activity.TestActivity" />
+    </application>
+
+</manifest>

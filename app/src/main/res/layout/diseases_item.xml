@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_weight="0.5"
+    android:layout_marginLeft="5dp"
+    android:padding="10dp"
+    android:background="@drawable/shadow_low"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Diebatics"
+            android:id="@+id/tv_diseases"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="0.65"
+                android:text="Started"
+                android:textSize="10dp"
+                android:layout_gravity="center"
+
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="0.35"
+                android:text="01-05-2019"
+                android:textColor="@android:color/black"
+                android:id="@+id/tv_started"
+
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="0.65"
+                android:text="Status"
+                android:layout_gravity="center"
+                android:textSize="10dp"
+
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="0.35"
+                android:text="Cured"
+                android:id="@+id/tv_status"
+                android:textColor="@android:color/black"
+
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+
+
+
+</LinearLayout>

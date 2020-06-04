@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Diseases Name and Detail"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:background="@drawable/ed_selector"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:padding="10dp"
+        android:gravity="start"
+        android:lines="3"
+        android:id="@+id/ed_body"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="First Found"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Click  to select Date"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:textColorHint="#cccccc"
+        android:id="@+id/tv_pickDate"
+        android:background="@drawable/shadow_low"
+        android:layout_height="50dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Current Status"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shadow_low"
+        android:textColor="@color/textColor"
+        android:padding="10dp"
+        android:id="@+id/ed_status"
+        android:layout_gravity="center_vertical"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="3dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardDone"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Add"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

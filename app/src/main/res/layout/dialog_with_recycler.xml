@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Select Test Names"
+        android:gravity="center"
+        android:padding="15dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recycler_view"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="0.5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Done"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/tv_done"
+        android:textColor="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

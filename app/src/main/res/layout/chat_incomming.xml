@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="20dp"
+        android:src="#cccccc"
+        android:id="@+id/image"
+        android:layout_height="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:background="@drawable/left_message_back"
+        android:text="Hello muk sdkjh sdkjfh skdjfh  sdfhhsadf kjsdfhsfdh sdfh  "
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:id="@+id/tv_body"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="10dp"
+        android:layout_height="wrap_content"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:text="Hello muk sdkjh sdkjfh skdjfh  sdfhhsadf kjsdfhsfdh sdfh  "
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:id="@+id/img_body"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="10dp"
+        android:layout_height="200dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:onClick="openChat"
+    android:layout_height="match_parent"
+    tools:context="com.doctor.telemedicine.Activity.DrChatActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_2"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="00dp"
+                android:padding="17dp"
+                android:onClick="back"
+
+                android:src="@drawable/left_white_" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_title"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/white"
+                android:text="Chat" />
+
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="250dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="#40CCCCCC"
+        app:cardCornerRadius="3dp"
+        android:layout_gravity="center"
+        android:layout_height="40dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="20dp"
+                android:src="@drawable/search_grey"
+                android:layout_marginLeft="10dp"
+                android:alpha="0.5"
+                android:layout_gravity="center"
+                android:layout_height="20dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="Search"
+                android:paddingLeft="10dp"
+                android:textSize="12dp"
+                android:id="@+id/edSearch"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recycler_view"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</LinearLayout>

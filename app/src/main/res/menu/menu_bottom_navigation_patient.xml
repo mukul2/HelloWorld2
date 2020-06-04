@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/menu_512"/>
+    <item android:title="Notification"
+        android:id="@+id/notification"
+        android:icon="@drawable/bell"/>
+    <item android:title="Account"
+        android:id="@+id/account"
+        android:icon="@drawable/user"/>
+    <item android:title="Appointment"
+        android:id="@+id/appointment"
+        android:icon="@drawable/calender_primary"/>
+    <item android:title="Blog"
+        android:id="@+id/blog"
+        android:icon="@drawable/blog_512"/>
+</menu>

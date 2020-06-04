@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_low"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:id="@+id/image"
+                android:src="@drawable/patient_" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:text="Sajib Khan"
+                android:id="@+id/tv_name"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:textColor="@android:color/black" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_problems"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="I have severe back pain for months.I did exercise"
+            android:layout_marginBottom="15dp"
+            android:textSize="12dp" />
+        <include
+            layout="@layout/divider"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:background="@color/colorPrimaryVeryLite"
+            android:lines="1"
+            android:padding="15dp"
+            android:text="Click for Detail"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</LinearLayout>

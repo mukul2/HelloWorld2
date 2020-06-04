@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="patient_bottom_navigation_icon_size">23dp</dimen>
+    <dimen name="card_rad">4dp</dimen>
+    <dimen name="menu_text_sixe">12sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dimen_for_curved">2dp</dimen>
+
+
+</resources>

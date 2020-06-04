@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/shadow_curved"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="60dp"
+            android:padding="20dp"
+            android:background="@color/colorPrimaryVeryLite"
+            android:tint="@color/colorPrimary"
+            android:src="@drawable/call_answer"
+            android:scaleType="centerCrop"
+            android:id="@+id/img_profile"
+            android:layout_margin="10dp"
+            android:layout_height="60dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Dr Name"
+                android:id="@+id/tv_name"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="6 Months"
+                android:id="@+id/tv_date"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.25dp"
+        android:background="@color/colorPrimaryVeryLite"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Mark as Compleated"
+        android:layout_gravity="right"
+        android:padding="5dp"
+        android:id="@+id/tv_mark_done"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.doctor.telemedicine.Activity.VideoCallPatientActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Video Call" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:onClick="Back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="10dp"
+                android:src="@drawable/left"
+                android:layout_gravity="center"
+                android:alpha="0.4"
+                android:layout_height="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Back"
+                android:textSize="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="0dp"
+
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#cccccc" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_no_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="No Doctor is Online Currently"
+            android:padding="10dp"
+            android:textSize="16dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/recycler_view"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="View Call History"
+            android:layout_below="@id/recycler_view"
+            android:gravity="center"
+            android:id="@+id/tv_callLog"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/recycler_view"
+
+            />
+
+    </LinearLayout>
+</LinearLayout>

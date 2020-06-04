@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="15dp"
+            android:text="9"
+            android:id="@+id/tv_serial"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+
+            />
+        <TextView
+            android:id="@+id/tv_medicineName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medicine name 500 mg"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_doses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Morning - Evening"
+        android:layout_marginLeft="15dp"
+        android:textSize="12sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7 Days"
+        android:layout_marginLeft="15dp"
+        android:textSize="12sp"
+        />
+    <TextView
+        android:id="@+id/tv_b_a_meal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7 Days"
+        android:layout_marginLeft="15dp"
+        android:textSize="12sp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.doctor.telemedicine.Activity.FindDoctorActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Search" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:onClick="back"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="10dp"
+                    android:src="@drawable/left"
+                    android:layout_gravity="center"
+                    android:alpha="0.4"
+                    android:layout_height="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Back"
+                    android:textSize="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="0dp"
+
+
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#cccccc" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow_side_free"
+
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Looking specialist for"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="00dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/search_grey" />
+
+                    <EditText
+                        android:id="@+id/ed_query"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/white"
+                        android:hint="Write doctor name"
+                        android:padding="10dp"
+                        android:textSize="14dp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/pharmacy" />
+
+                    <Spinner
+                        android:id="@+id/hospitals"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:padding="10dp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.25dp"
+                    android:background="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/pharmacy" />
+
+                    <Spinner
+                        android:id="@+id/specialistSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:padding="10dp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow_side_free"
+
+                android:visibility="gone">
+
+                <com.github.badoualy.datepicker.DatePickerTimeline
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:mti_bgLblDateSelectedColor="@android:color/darker_gray"
+                    app:mti_bgLblTodayColor="@color/colorPrimary"
+                    app:mti_lblDateColor="@android:color/black"
+                    app:mti_lblDateSelectedColor="@android:color/white"
+                    app:mti_lblDayColor="@android:color/darker_gray"
+                    app:mti_lblLabelColor="@android:color/darker_gray"
+                    app:mti_primaryColor="@android:color/white"
+                    app:mti_primaryDarkColor="@android:color/darker_gray"
+                    app:mti_ringLblDateSelectedColor="@android:color/darker_gray"
+                    app:mti_tabBeforeSelectionColor="@android:color/darker_gray"
+                    app:mti_tabSelectedColor="@color/colorPrimary" />
+            </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="30dp"
+                    android:text="Search Doctors"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/shadow_full"
+                    android:onClick="searchDoctor"
+
+                    />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

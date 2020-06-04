@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.doctor.telemedicine.Activity.DrAllAppointmentsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Appointments" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:onClick="back"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="10dp"
+                    android:src="@drawable/left"
+                    android:layout_gravity="center"
+                    android:alpha="0.4"
+                    android:layout_height="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Back"
+                    android:textSize="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="0dp"
+
+
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#cccccc" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="00dp"
+            android:onClick="openApprovedDr"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:src="@drawable/calender_primary"
+                        android:padding="13dp"
+                        android:layout_height="50dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Confirmed"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Approved by doctor"
+                            android:lines="1"
+                            android:textSize="12dp"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:background="#cccccc" />
+
+
+
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="20dp"
+                android:src="@drawable/next"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:alpha="0.3"
+                android:layout_height="20dp"
+                android:padding="3dp"
+
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="00dp"
+            android:onClick="openPendingDr"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:src="@drawable/calender_primary"
+                        android:padding="13dp"
+                        android:layout_height="50dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Pending"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Awaiting for approval"
+                            android:lines="1"
+                            android:textSize="12dp"
+                            android:layout_height="wrap_content"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:visibility="gone"
+                    android:background="#cccccc" />
+
+
+
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="20dp"
+                android:src="@drawable/next"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:alpha="0.3"
+                android:layout_height="20dp"
+                android:padding="3dp"
+
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</ScrollView>

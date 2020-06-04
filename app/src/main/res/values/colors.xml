@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DB1212</color>
+    <color name="colorPrimaryLite">#1aDB1212</color>
+    <color name="colorPrimaryVeryLite">#1ADB1212</color>
+    <color name="colorPrimaryDark">#DB1212</color>
+    <color name="colorAccent">#DB1212</color>
+    <color name="textColor">#636363</color>
+    <color name="textText">#636363</color>
+    <color name="black">@android:color/black</color>
+    <color name="tab_active">@android:color/white</color>
+    <color name="tab_inactive">#36cccccc</color>
+    <color name="red">#CB4335</color>
+    <color name="red_lite">#2ecb4335</color>
+    <color name="white">@android:color/white</color>
+</resources>

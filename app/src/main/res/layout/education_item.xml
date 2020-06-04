@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/shadow_low"
+
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="MBBS Institution"
+            android:id="@+id/tv_title"
+            android:textSize="12dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_height="wrap_content"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="00dp"
+                android:layout_marginLeft="3dp"
+
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.1"
+                    android:text="Dhaka Medical College"
+                    android:textSize="12dp"
+                    android:id="@+id/tv_body"
+                    android:background="@android:color/white"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@android:color/black"
+
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_weight="0.9"
+                    android:src="@drawable/edit_"
+                    android:padding="5dp"
+                    android:alpha="0.0"
+
+
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

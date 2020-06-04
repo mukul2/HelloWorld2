@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_2"
+
+    tools:context="com.doctor.telemedicine.Activity.HomeActivityDrActivity">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:paddingTop="5dp"
+        app:itemIconSize="18dp"
+        android:paddingBottom="00dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_navigation_doctor">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpPager"
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/white"
+        android:layout_marginBottom="56dp"
+        android:layout_height="wrap_content">
+
+    </androidx.viewpager.widget.ViewPager>
+</RelativeLayout>
