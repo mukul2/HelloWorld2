@@ -277,7 +277,8 @@ public interface ApiInterface {
                                                          @Field("patient_id") String patient_id,
                                                          @Field("doctor_id") String doctor_id,
                                                          @Field("payment_details") String payment_details,
-                                                         @Field("payment_status") String payment_status);
+                                                         @Field("payment_status") String payment_status,
+                                                         @Field("amount") String amount);
 
     @FormUrlEncoded
     @POST("get-appointment-list")
@@ -340,7 +341,8 @@ public interface ApiInterface {
     Call<AppointmentAddResponse> addChatReques(@Header("Authorization") String token,
                                          @Field("patient_id") String patient_id,
                                          @Field("dr_id") String dr_id,
-                                         @Field("payment_details") String payment_details);
+                                         @Field("payment_details") String payment_details,
+                                         @Field("amount") String amount);
 
     @FormUrlEncoded
     @POST("check_subscriptions")
@@ -367,6 +369,13 @@ public interface ApiInterface {
                                          @Field("payment_details") String payment_details,
                                          @Field("payment_status") String payment_status);
     @FormUrlEncoded
+    @POST("add_payment_info_only")
+    Call<StatusMessage> add_payment_info_only(@Header("Authorization") String token,
+                                         @Field("patient_id") String patient_id,
+                                         @Field("dr_id") String dr_id,
+                                         @Field("amount") String amount,
+                                         @Field("reason") String reason);
+    @FormUrlEncoded
     @POST("add_subscription_info")
     Call<StatusMessage> add_subscription_info(@Header("Authorization") String token,
                                          @Field("patient_id") String patient_id,
@@ -374,7 +383,8 @@ public interface ApiInterface {
                                          @Field("payment_details") String payment_details,
                                          @Field("number_of_months") String number_of_months,
                                          @Field("starts") String starts,
-                                         @Field("ends") String ends);
+                                         @Field("ends") String ends,
+                                         @Field("amount") String amount);
 
 
     @GET("view-ambulance")

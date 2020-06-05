@@ -884,8 +884,8 @@ public class Api {
 
     }
 
-    public void addVideoAppointmentInfo(String token, String p_id, String dr_id, String payment_details, String payment_status, final ApiListener.AppointmentPOstListener listener) {
-        ApiClient.getApiInterface().addVideoAppointmentInfo(token, p_id, dr_id, payment_details, payment_status).enqueue(new Callback<AppointmentAddResponse>() {
+    public void addVideoAppointmentInfo(String token, String p_id, String dr_id, String payment_details, String payment_status,String amount, final ApiListener.AppointmentPOstListener listener) {
+        ApiClient.getApiInterface().addVideoAppointmentInfo(token, p_id, dr_id, payment_details, payment_status,amount).enqueue(new Callback<AppointmentAddResponse>() {
             @Override
             public void onResponse(Call<AppointmentAddResponse> call, Response<AppointmentAddResponse> response) {
                 listener.onAppointmentPOStSuccess(response.body());
@@ -1010,10 +1010,9 @@ public class Api {
             }
         });
     }
+    public void add_payment_info_only(String token, String p_id, String d_id, String amount, String reason,  final ApiListener.basicApiListener listener) {
 
-    public void add_subscription_info(String token, String p_id, String d_id, String payment_details, String number_of_months, String starts, String ends, final ApiListener.basicApiListener listener) {
-
-        ApiClient.getApiInterface().add_subscription_info(token, p_id, d_id, payment_details, number_of_months, starts, ends).enqueue(new Callback<StatusMessage>() {
+        ApiClient.getApiInterface().add_payment_info_only(token, p_id, d_id, amount, reason).enqueue(new Callback<StatusMessage>() {
             @Override
             public void onResponse(@NonNull Call<StatusMessage> call, @NonNull Response<StatusMessage> response) {
                 if (response != null) {
@@ -1030,9 +1029,28 @@ public class Api {
         });
     }
 
-    public void addChatRequest(String token, String p_id, String d_id, String payment_details, final ApiListener.AppointmentPOstListener listener) {
+    public void add_subscription_info(String token, String p_id, String d_id, String payment_details, String number_of_months, String starts, String ends,String amount, final ApiListener.basicApiListener listener) {
 
-        ApiClient.getApiInterface().addChatReques(token, p_id, d_id, payment_details).enqueue(new Callback<AppointmentAddResponse>() {
+        ApiClient.getApiInterface().add_subscription_info(token, p_id, d_id, payment_details, number_of_months, starts, ends,amount).enqueue(new Callback<StatusMessage>() {
+            @Override
+            public void onResponse(@NonNull Call<StatusMessage> call, @NonNull Response<StatusMessage> response) {
+                if (response != null) {
+                    listener.onBasicSuccess(response.body());
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<StatusMessage> call, @NonNull Throwable t) {
+                listener.onBasicApiFailed(t.getLocalizedMessage());
+            }
+        });
+    }
+
+    public void addChatRequest(String token, String p_id, String d_id, String payment_details,String amount, final ApiListener.AppointmentPOstListener listener) {
+
+        ApiClient.getApiInterface().addChatReques(token, p_id, d_id, payment_details,amount).enqueue(new Callback<AppointmentAddResponse>() {
             @Override
             public void onResponse(@NonNull Call<AppointmentAddResponse> call, @NonNull Response<AppointmentAddResponse> response) {
                 if (response != null) {

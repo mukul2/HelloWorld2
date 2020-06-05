@@ -135,7 +135,7 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     private void processToThe1MonthSubscriptionRequest(String paymentDetails) {
         calendar.add(Calendar.MONTH,1);
         endMonth = ""+calendar.get(Calendar.YEAR)+"-"+(1+calendar.get(Calendar.MONTH))+"-"+(1+calendar.get(Calendar.DATE));
-        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "1", startMonth, endMonth, new ApiListener.basicApiListener() {
+        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "1", startMonth, endMonth,amount, new ApiListener.basicApiListener() {
             @Override
             public void onBasicSuccess(StatusMessage response) {
                 Toast.makeText(context, response.getMessage(), Toast.LENGTH_SHORT).show();
@@ -153,7 +153,7 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     private void processToThe6MonthSubscriptionRequest(String paymentDetails) {
         calendar.add(Calendar.MONTH,6);
         endMonth = ""+calendar.get(Calendar.YEAR)+"-"+(1+calendar.get(Calendar.MONTH))+"-"+(1+calendar.get(Calendar.DATE));
-        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "6", startMonth, endMonth, new ApiListener.basicApiListener() {
+        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "6", startMonth, endMonth, amount,new ApiListener.basicApiListener() {
             @Override
             public void onBasicSuccess(StatusMessage response) {
                 Toast.makeText(context, response.getMessage(), Toast.LENGTH_SHORT).show();
@@ -172,7 +172,7 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     private void processToThe3MonthSubscriptionRequest(String paymentDetails) {
         calendar.add(Calendar.MONTH,3);
         endMonth = ""+calendar.get(Calendar.YEAR)+"-"+(1+calendar.get(Calendar.MONTH))+"-"+(1+calendar.get(Calendar.DATE));
-        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "3", startMonth, endMonth, new ApiListener.basicApiListener() {
+        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "3", startMonth, endMonth,amount, new ApiListener.basicApiListener() {
             @Override
             public void onBasicSuccess(StatusMessage response) {
                 Toast.makeText(context, response.getMessage(), Toast.LENGTH_SHORT).show();
@@ -190,7 +190,8 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     }
     private void processToThe12MonthSubscriptionRequest(String paymentDetails) {
         calendar.add(Calendar.MONTH,12);
-        endMonth = ""+calendar.get(Calendar.YEAR)+"-"+(1+calendar.get(Calendar.MONTH))+"-"+(1+calendar.get(Calendar.DATE));  Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "12", startMonth, endMonth, new ApiListener.basicApiListener() {
+        endMonth = ""+calendar.get(Calendar.YEAR)+"-"+(1+calendar.get(Calendar.MONTH))+"-"+(1+calendar.get(Calendar.DATE));
+        Api.getInstance().add_subscription_info(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "12", startMonth, endMonth, amount,new ApiListener.basicApiListener() {
             @Override
             public void onBasicSuccess(StatusMessage response) {
                 Toast.makeText(context, response.getMessage(), Toast.LENGTH_SHORT).show();
@@ -207,9 +208,10 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
 
     }
     private void processToTheChatRequest(String paymentDetails) {
-        Api.getInstance().addChatRequest(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, new ApiListener.AppointmentPOstListener() {
+        Api.getInstance().addChatRequest(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails,amount, new ApiListener.AppointmentPOstListener() {
             @Override
             public void onAppointmentPOStSuccess(AppointmentAddResponse data) {
+                Toast.makeText(context, data.getMessage(), Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(context, ChatActivityCommon.class);
                 i.putExtra("partner_id", "" + NOW_SHOWING_ONLINE_DOC.getId());
@@ -229,10 +231,23 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     }
 
     private void processToThePrescriptionRequest(String paymentDetails) {
-        Intent i = new Intent(getBaseContext(), PrescriptonRequestMakingActivity.class);
-        i.putExtra("paymentInfo", paymentDetails);
-        //paymentInfo
-        startActivity(i);
+
+        Api.getInstance().add_payment_info_only(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), amount, "Prescription request", new ApiListener.basicApiListener() {
+            @Override
+            public void onBasicSuccess(StatusMessage response) {
+                Intent i = new Intent(getBaseContext(), PrescriptonRequestMakingActivity.class);
+                i.putExtra("paymentInfo", paymentDetails);
+                i.putExtra("amount", amount);
+                //paymentInfo
+                startActivity(i);
+            }
+
+            @Override
+            public void onBasicApiFailed(String msg) {
+
+            }
+        });
+
     }
 
     private void doNothing() {
@@ -240,7 +255,7 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     }
 
     private void processToTheAddVideoAppointment(String paymentDetails) {
-        Api.getInstance().addVideoAppointmentInfo(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "1", new ApiListener.AppointmentPOstListener() {
+        Api.getInstance().addVideoAppointmentInfo(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), paymentDetails, "1",amount, new ApiListener.AppointmentPOstListener() {
             @Override
             public void onAppointmentPOStSuccess(AppointmentAddResponse data) {
 
@@ -260,12 +275,29 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
     }
 
     private void processToThePrescriptioReview(String paymentDetails) {
-        Intent intent = new Intent(context, PrescriptionReviewSendingActivity.class);
 
-        intent.putExtra("paymentInfo", paymentDetails);
-        intent.putExtra("doctorID", "" + NOW_SHOWING_ONLINE_DOC.getId());
-        intent.putExtra("partnerName", NOW_SHOWING_ONLINE_DOC.getName());
-        intent.putExtra("partnerPhoto", NOW_SHOWING_ONLINE_DOC.getPhoto());
-        context.startActivity(intent);
+        Api.getInstance().add_payment_info_only(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), amount, "Prescription Review", new ApiListener.basicApiListener() {
+            @Override
+            public void onBasicSuccess(StatusMessage response) {
+                Intent intent = new Intent(context, PrescriptionReviewSendingActivity.class);
+
+                intent.putExtra("paymentInfo", paymentDetails);
+                intent.putExtra("doctorID", "" + NOW_SHOWING_ONLINE_DOC.getId());
+                intent.putExtra("partnerName", NOW_SHOWING_ONLINE_DOC.getName());
+                intent.putExtra("partnerPhoto", NOW_SHOWING_ONLINE_DOC.getPhoto());
+                intent.putExtra("amount",amount);
+                context.startActivity(intent);
+            }
+
+            @Override
+            public void onBasicApiFailed(String msg) {
+
+            }
+        });
+
+
+
+
+
     }
 }

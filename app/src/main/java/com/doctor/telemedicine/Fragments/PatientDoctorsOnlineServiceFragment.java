@@ -37,15 +37,12 @@ public class PatientDoctorsOnlineServiceFragment extends Fragment implements Api
     Context context;
     @BindView(R.id.recycler_view)
     RecyclerView recycler_view;
-    public  static  boolean IS_CHAT_SUBSCRIBED = false ;
-    public  static  boolean IS_VIDEO_CALL_SUBSCRIBED = false ;
-    public  static  boolean IS_1_SUBSCRIBED = false ;
-    public  static  boolean IS_3_SUBSCRIBED = false ;
-    public  static  boolean IS_6_SUBSCRIBED = false ;
-    public  static  boolean IS_12_SUBSCRIBED = false ;
-
-
-
+    public static boolean IS_CHAT_SUBSCRIBED = false;
+    public static boolean IS_VIDEO_CALL_SUBSCRIBED = false;
+    public static boolean IS_1_SUBSCRIBED = false;
+    public static boolean IS_3_SUBSCRIBED = false;
+    public static boolean IS_6_SUBSCRIBED = false;
+    public static boolean IS_12_SUBSCRIBED = false;
 
 
     public static PatientDoctorsOnlineServiceFragment newInstance() {
@@ -58,6 +55,29 @@ public class PatientDoctorsOnlineServiceFragment extends Fragment implements Api
     }
 
     @Override
+    public void onDestroy() {
+        IS_CHAT_SUBSCRIBED = false;
+        IS_VIDEO_CALL_SUBSCRIBED = false;
+        IS_1_SUBSCRIBED = false;
+        IS_3_SUBSCRIBED = false;
+        IS_6_SUBSCRIBED = false;
+        IS_12_SUBSCRIBED = false;
+        super.onDestroy();
+    }
+
+    @Override
+    public void onResume() {
+        IS_CHAT_SUBSCRIBED = false;
+        IS_VIDEO_CALL_SUBSCRIBED = false;
+        IS_1_SUBSCRIBED = false;
+        IS_3_SUBSCRIBED = false;
+        IS_6_SUBSCRIBED = false;
+        IS_12_SUBSCRIBED = false;
+        super.onResume();
+        Api.getInstance().check_subscriptions(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), this);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -66,15 +86,13 @@ public class PatientDoctorsOnlineServiceFragment extends Fragment implements Api
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.online_servicec_fragment, container, false);
-        context=v.getContext();
+        context = v.getContext();
 
-        ButterKnife.bind(this,v);
+        ButterKnife.bind(this, v);
 
         //DrConfirmedActivity\
 
-        Api.getInstance().check_subscriptions(TOKEN,USER_ID,""+NOW_SHOWING_ONLINE_DOC.getId(),this);
-
-
+        Api.getInstance().check_subscriptions(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), this);
 
 
         return v;
@@ -101,13 +119,13 @@ public class PatientDoctorsOnlineServiceFragment extends Fragment implements Api
 
     @Override
     public void onSubscriptionViewSuccess(SubscriptionViewResponse data) {
-        if (data!=null){
-            if (data.getChat()>0)IS_CHAT_SUBSCRIBED = true ;
-            if (data.getVideo()>0)IS_VIDEO_CALL_SUBSCRIBED = true ;
-            if (data.getOne()>0)IS_1_SUBSCRIBED = true ;
-            if (data.getThree()>0)IS_3_SUBSCRIBED = true ;
-            if (data.getSix()>0)IS_6_SUBSCRIBED = true ;
-            if (data.getYear()>0)IS_12_SUBSCRIBED = true ;
+        if (data != null) {
+            if (data.getChat() > 0) IS_CHAT_SUBSCRIBED = true;
+            if (data.getVideo() > 0) IS_VIDEO_CALL_SUBSCRIBED = true;
+            if (data.getOne() > 0) IS_1_SUBSCRIBED = true;
+            if (data.getThree() > 0) IS_3_SUBSCRIBED = true;
+            if (data.getSix() > 0) IS_6_SUBSCRIBED = true;
+            if (data.getYear() > 0) IS_12_SUBSCRIBED = true;
             initRecyclerView();
         }
 
