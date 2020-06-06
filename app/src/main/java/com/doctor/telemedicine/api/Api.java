@@ -3,6 +3,7 @@ package com.doctor.telemedicine.api;
 
 import androidx.annotation.NonNull;
 
+import com.doctor.telemedicine.model.AllCollectionWithdraModel;
 import com.doctor.telemedicine.model.AmbulanceModel;
 import com.doctor.telemedicine.model.AppointmentAddResponse;
 import com.doctor.telemedicine.model.AppointmentModel;
@@ -34,6 +35,7 @@ import com.doctor.telemedicine.model.NoticeModel;
 import com.doctor.telemedicine.model.NotificationResponse;
 import com.doctor.telemedicine.model.OnlineDoctorModel;
 import com.doctor.telemedicine.model.OnlineDoctorsModel;
+import com.doctor.telemedicine.model.PaymentModel;
 import com.doctor.telemedicine.model.PrescriptionModel;
 import com.doctor.telemedicine.model.PrescriptionRequestModel;
 import com.doctor.telemedicine.model.PrescriptionReviewModel;
@@ -884,8 +886,8 @@ public class Api {
 
     }
 
-    public void addVideoAppointmentInfo(String token, String p_id, String dr_id, String payment_details, String payment_status,String amount, final ApiListener.AppointmentPOstListener listener) {
-        ApiClient.getApiInterface().addVideoAppointmentInfo(token, p_id, dr_id, payment_details, payment_status,amount).enqueue(new Callback<AppointmentAddResponse>() {
+    public void addVideoAppointmentInfo(String token, String p_id, String dr_id, String payment_details, String payment_status, String amount, final ApiListener.AppointmentPOstListener listener) {
+        ApiClient.getApiInterface().addVideoAppointmentInfo(token, p_id, dr_id, payment_details, payment_status, amount).enqueue(new Callback<AppointmentAddResponse>() {
             @Override
             public void onResponse(Call<AppointmentAddResponse> call, Response<AppointmentAddResponse> response) {
                 listener.onAppointmentPOStSuccess(response.body());
@@ -1010,7 +1012,8 @@ public class Api {
             }
         });
     }
-    public void add_payment_info_only(String token, String p_id, String d_id, String amount, String reason,  final ApiListener.basicApiListener listener) {
+
+    public void add_payment_info_only(String token, String p_id, String d_id, String amount, String reason, final ApiListener.basicApiListener listener) {
 
         ApiClient.getApiInterface().add_payment_info_only(token, p_id, d_id, amount, reason).enqueue(new Callback<StatusMessage>() {
             @Override
@@ -1029,9 +1032,27 @@ public class Api {
         });
     }
 
-    public void add_subscription_info(String token, String p_id, String d_id, String payment_details, String number_of_months, String starts, String ends,String amount, final ApiListener.basicApiListener listener) {
+    public void get_payment_list(String token, String id, String user_type, final ApiListener.PaymentListDownloadListener listener) {
+        ApiClient.getApiInterface().get_payment_list(token, id, user_type).enqueue(new Callback<AllCollectionWithdraModel>() {
+            @Override
+            public void onResponse(@NonNull Call<AllCollectionWithdraModel> call, @NonNull Response<AllCollectionWithdraModel> response) {
+                if (response != null) {
+                    listener.onPaymentListDownloadSuccess(response.body());
 
-        ApiClient.getApiInterface().add_subscription_info(token, p_id, d_id, payment_details, number_of_months, starts, ends,amount).enqueue(new Callback<StatusMessage>() {
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<AllCollectionWithdraModel> call, @NonNull Throwable t) {
+                listener.onPaymentListDownloadFailed(t.getLocalizedMessage());
+            }
+        });
+    }
+
+    public void add_subscription_info(String token, String p_id, String d_id, String payment_details, String number_of_months, String starts, String ends, String amount, final ApiListener.basicApiListener listener) {
+
+        ApiClient.getApiInterface().add_subscription_info(token, p_id, d_id, payment_details, number_of_months, starts, ends, amount).enqueue(new Callback<StatusMessage>() {
             @Override
             public void onResponse(@NonNull Call<StatusMessage> call, @NonNull Response<StatusMessage> response) {
                 if (response != null) {
@@ -1048,9 +1069,9 @@ public class Api {
         });
     }
 
-    public void addChatRequest(String token, String p_id, String d_id, String payment_details,String amount, final ApiListener.AppointmentPOstListener listener) {
+    public void addChatRequest(String token, String p_id, String d_id, String payment_details, String amount, final ApiListener.AppointmentPOstListener listener) {
 
-        ApiClient.getApiInterface().addChatReques(token, p_id, d_id, payment_details,amount).enqueue(new Callback<AppointmentAddResponse>() {
+        ApiClient.getApiInterface().addChatReques(token, p_id, d_id, payment_details, amount).enqueue(new Callback<AppointmentAddResponse>() {
             @Override
             public void onResponse(@NonNull Call<AppointmentAddResponse> call, @NonNull Response<AppointmentAddResponse> response) {
                 if (response != null) {
@@ -1161,6 +1182,7 @@ public class Api {
             }
         });
     }
+
     public void change_video_appointment_status_done(String token, String appointment_id, final ApiListener.basicApiListener listener) {
 
         ApiClient.getApiInterface().change_video_appointment_status_done(token, appointment_id).enqueue(new Callback<StatusMessage>() {

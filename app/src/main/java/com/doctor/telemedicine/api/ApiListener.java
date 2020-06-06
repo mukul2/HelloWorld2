@@ -1,6 +1,7 @@
 package com.doctor.telemedicine.api;
 
 
+import com.doctor.telemedicine.model.AllCollectionWithdraModel;
 import com.doctor.telemedicine.model.AmbulanceModel;
 import com.doctor.telemedicine.model.AppointmentAddResponse;
 import com.doctor.telemedicine.model.AppointmentModel;
@@ -30,6 +31,7 @@ import com.doctor.telemedicine.model.MedicineModel;
 import com.doctor.telemedicine.model.NoticeModel;
 import com.doctor.telemedicine.model.OnlineDoctorModel;
 import com.doctor.telemedicine.model.OnlineDoctorsModel;
+import com.doctor.telemedicine.model.PaymentModel;
 import com.doctor.telemedicine.model.PrescriptionModel;
 import com.doctor.telemedicine.model.PrescriptionRequestModel;
 import com.doctor.telemedicine.model.PrescriptionReviewModel;
@@ -531,6 +533,12 @@ public class ApiListener {
         void onBasicSuccess(StatusMessage response);
 
         void onBasicApiFailed(String msg);
+    }
+
+    public interface PaymentListDownloadListener {
+        void onPaymentListDownloadSuccess(AllCollectionWithdraModel response);
+
+        void onPaymentListDownloadFailed(String msg);
     }
 
     public interface VideoCallPostListener {

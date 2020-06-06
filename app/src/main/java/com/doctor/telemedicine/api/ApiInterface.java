@@ -1,6 +1,7 @@
 package com.doctor.telemedicine.api;
 
 
+import com.doctor.telemedicine.model.AllCollectionWithdraModel;
 import com.doctor.telemedicine.model.AmbulanceModel;
 import com.doctor.telemedicine.model.AppointmentAddResponse;
 import com.doctor.telemedicine.model.AppointmentModel;
@@ -33,6 +34,7 @@ import com.doctor.telemedicine.model.NoticeModel;
 import com.doctor.telemedicine.model.NotificationResponse;
 import com.doctor.telemedicine.model.OnlineDoctorModel;
 import com.doctor.telemedicine.model.OnlineDoctorsModel;
+import com.doctor.telemedicine.model.PaymentModel;
 import com.doctor.telemedicine.model.PrescriptionModel;
 import com.doctor.telemedicine.model.PrescriptionRequestModel;
 import com.doctor.telemedicine.model.PrescriptionReviewModel;
@@ -375,6 +377,12 @@ public interface ApiInterface {
                                          @Field("dr_id") String dr_id,
                                          @Field("amount") String amount,
                                          @Field("reason") String reason);
+
+    @FormUrlEncoded
+    @POST("get_payment_list")
+    Call<AllCollectionWithdraModel> get_payment_list(@Header("Authorization") String token,
+                                                     @Field("id") String patient_id,
+                                                     @Field("user_type") String user_type);
     @FormUrlEncoded
     @POST("add_subscription_info")
     Call<StatusMessage> add_subscription_info(@Header("Authorization") String token,

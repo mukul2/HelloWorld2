@@ -25,7 +25,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.MySubsCribedPatients"></activity>
+        <activity android:name=".Activity.PaymentsHistoryActivity"></activity>
+        <activity android:name=".Activity.MySubsCribedPatients" />
         <activity android:name=".Activity.VideoCallAppointmentList" />
         <activity android:name=".Activity.SubscriptionActivityPatient" />
         <activity android:name=".Activity.PrescriptonRequestMakingActivity" />

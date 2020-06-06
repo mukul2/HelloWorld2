@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.doctor.telemedicine.Activity.MySubsCribedPatients;
+import com.doctor.telemedicine.Activity.PaymentsHistoryActivity;
 import com.doctor.telemedicine.Activity.VideoCallAppointmentList;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -107,8 +108,8 @@ public class HomeFragmentDr extends Fragment {
     ExtendedFloatingActionButton request;
     @BindView(R.id.floatSubscription)
     ExtendedFloatingActionButton floatSubscription;
-
-
+    @BindView(R.id.piggyBank)
+    ExtendedFloatingActionButton piggyBank;
 
 
     SessionManager sessionManager;
@@ -154,9 +155,9 @@ public class HomeFragmentDr extends Fragment {
         confirmed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
                     startActivity(new Intent(context, DrConfirmedActivity.class));
-                }else {
+                } else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -164,9 +165,9 @@ public class HomeFragmentDr extends Fragment {
         linerChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
                     startActivity(new Intent(context, ChatListActivity.class));
-                }else {
+                } else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -174,16 +175,16 @@ public class HomeFragmentDr extends Fragment {
         linerVideoCallRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(context, VideoCallAppointmentList.class));
+                startActivity(new Intent(context, VideoCallAppointmentList.class));
             }
         });
 //DrPrescriptionListActivity
         request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
                     startActivity(new Intent(context, DrPrescriptionListActivity.class));
-                }else {
+                } else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -193,9 +194,9 @@ public class HomeFragmentDr extends Fragment {
         recheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
                     startActivity(new Intent(context, RecheckActivityDr.class));
-                }else {
+                } else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -204,9 +205,9 @@ public class HomeFragmentDr extends Fragment {
         pending.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
                     startActivity(new Intent(context, DrPendingActivity.class));
-                }else {
+                } else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -227,9 +228,9 @@ public class HomeFragmentDr extends Fragment {
         linerVideoCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
                     context.startActivity(new Intent(context, VideoCallActivityDr.class));
-                }else {
+                } else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -242,9 +243,12 @@ public class HomeFragmentDr extends Fragment {
                 startActivity(new Intent(context, PatientPersonalInfoActivity.class));
             }
         });
-        floatSubscription.setOnClickListener((View view)->{
+        floatSubscription.setOnClickListener((View view) -> {
             startActivity(new Intent(context, MySubsCribedPatients.class));
 
+        });
+        piggyBank.setOnClickListener((View view) -> {
+            startActivity(new Intent(context, PaymentsHistoryActivity.class));
         });
         return v;
     }
@@ -276,52 +280,52 @@ public class HomeFragmentDr extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String track_id = charSequence.toString();
-                if (USER_ENABLED==true) {
+                if (USER_ENABLED == true) {
 
-                if (track_id.length() > 0) {
+                    if (track_id.length() > 0) {
 
-                    Api.getInstance().track(TOKEN, track_id, USER_ID, new ApiListener.TrackListener() {
-                        @Override
-                        public void onTrackSuccess(List<TrackModel> response) {
-                            if (response != null && response.size() > 0 && (response.get(0) != null)) {
-                                Toast.makeText(context, "data has", Toast.LENGTH_SHORT).show();
-                                searchModelList.clear();
-                                searchModelList.addAll(response);
-                                mAdapter.notifyDataSetChanged();
-                                divider.setVisibility(View.VISIBLE);
-                                linerBodyToHide.setVisibility(View.GONE);
-                            } else {
-                                divider.setVisibility(View.VISIBLE);
-                                searchModelList.clear();
-                                TrackModel model = new TrackModel();
-                                model.setId(0);
-                                model.setProblems("No result found");
-                                searchModelList.add(model);
-                                mAdapter.notifyDataSetChanged();
-                                Toast.makeText(context, "no result", Toast.LENGTH_SHORT).show();
-                                linerBodyToHide.setVisibility(View.GONE);
+                        Api.getInstance().track(TOKEN, track_id, USER_ID, new ApiListener.TrackListener() {
+                            @Override
+                            public void onTrackSuccess(List<TrackModel> response) {
+                                if (response != null && response.size() > 0 && (response.get(0) != null)) {
+                                    Toast.makeText(context, "data has", Toast.LENGTH_SHORT).show();
+                                    searchModelList.clear();
+                                    searchModelList.addAll(response);
+                                    mAdapter.notifyDataSetChanged();
+                                    divider.setVisibility(View.VISIBLE);
+                                    linerBodyToHide.setVisibility(View.GONE);
+                                } else {
+                                    divider.setVisibility(View.VISIBLE);
+                                    searchModelList.clear();
+                                    TrackModel model = new TrackModel();
+                                    model.setId(0);
+                                    model.setProblems("No result found");
+                                    searchModelList.add(model);
+                                    mAdapter.notifyDataSetChanged();
+                                    Toast.makeText(context, "no result", Toast.LENGTH_SHORT).show();
+                                    linerBodyToHide.setVisibility(View.GONE);
 
+
+                                }
 
                             }
 
-                        }
+                            @Override
+                            public void onTrackFailed(String msg) {
 
-                        @Override
-                        public void onTrackFailed(String msg) {
+                            }
+                        });
 
-                        }
-                    });
+                    } else {
+                        linerBodyToHide.setVisibility(View.VISIBLE);
+                        divider.setVisibility(View.GONE);
 
+                        searchModelList.clear();
+                        mAdapter.notifyDataSetChanged();
+
+
+                    }
                 } else {
-                    linerBodyToHide.setVisibility(View.VISIBLE);
-                    divider.setVisibility(View.GONE);
-
-                    searchModelList.clear();
-                    mAdapter.notifyDataSetChanged();
-
-
-                }
-                }else {
                     Toast.makeText(context, "Your account is not verified yet", Toast.LENGTH_SHORT).show();
                 }
             }
