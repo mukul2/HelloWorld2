@@ -383,6 +383,13 @@ public interface ApiInterface {
     Call<AllCollectionWithdraModel> get_payment_list(@Header("Authorization") String token,
                                                      @Field("id") String patient_id,
                                                      @Field("user_type") String user_type);
+
+    @FormUrlEncoded
+    @POST("add_withdrawal_request")
+    Call<StatusMessage> add_withdrawal_request(@Header("Authorization") String token,
+                                                     @Field("dr_id") String dr_id,
+                                                     @Field("amount") String amount,
+                                                     @Field("bankinfo") String bankinfo);
     @FormUrlEncoded
     @POST("add_subscription_info")
     Call<StatusMessage> add_subscription_info(@Header("Authorization") String token,

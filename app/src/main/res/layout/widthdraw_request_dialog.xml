@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="15dp"
+
+
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Request for Widhdrawl"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_balance"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:text="Wallet ballance 100 USD"
+
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+
+        android:text="Withdraw ammount"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="eg. 100 "
+        android:inputType="number"
+        android:padding="10dp"
+        android:background="@drawable/ed_selector"
+        android:layout_marginTop="5dp"
+        android:id="@+id/ed_amount"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+
+        android:text="Transfarable medium and account"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:hint="eg. Your bank account numbr"
+        android:padding="10dp"
+        android:id="@+id/ed_bank"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ed_selector"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:id="@+id/cardRequest"
+
+        app:cardBackgroundColor="@color/colorPrimary"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Request"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

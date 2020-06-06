@@ -1050,6 +1050,24 @@ public class Api {
         });
     }
 
+    public void add_withdrawal_request(String token, String dr_id, String amount, String bnk,final ApiListener.basicApiListener listener) {
+        ApiClient.getApiInterface().add_withdrawal_request(token, dr_id, amount,bnk).enqueue(new Callback<StatusMessage>() {
+            @Override
+            public void onResponse(@NonNull Call<StatusMessage> call, @NonNull Response<StatusMessage> response) {
+                if (response != null) {
+                    listener.onBasicSuccess(response.body());
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<StatusMessage> call, @NonNull Throwable t) {
+                listener.onBasicApiFailed(t.getLocalizedMessage());
+            }
+        });
+    }
+
     public void add_subscription_info(String token, String p_id, String d_id, String payment_details, String number_of_months, String starts, String ends, String amount, final ApiListener.basicApiListener listener) {
 
         ApiClient.getApiInterface().add_subscription_info(token, p_id, d_id, payment_details, number_of_months, starts, ends, amount).enqueue(new Callback<StatusMessage>() {

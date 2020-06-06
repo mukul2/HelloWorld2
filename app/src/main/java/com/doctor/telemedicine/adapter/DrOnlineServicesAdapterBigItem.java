@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.doctor.telemedicine.Activity.ChatActivityCommon;
@@ -118,7 +119,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
             //prescrion request
             holder.itemView.setOnClickListener((View view) -> {
             Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-            LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+            CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                 TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                 String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -138,7 +139,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
 
 
                 Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                 TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                 String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -173,7 +174,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
 
 
                     Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                    LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                    CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                     TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                     String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -208,7 +209,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
 
 
                     Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                    LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                    CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                     TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                     String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -238,7 +239,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
             } else {
                 holder.itemView.setOnClickListener((View view) -> {
                     Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                    LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                    CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                     TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                     String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -268,7 +269,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
             } else {
                 holder.itemView.setOnClickListener((View view) -> {
                     Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                    LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                    CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                     TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                     String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -298,7 +299,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
             } else {
                 holder.itemView.setOnClickListener((View view) -> {
                     Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                    LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                    CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                     TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                     String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 
@@ -328,7 +329,7 @@ public class DrOnlineServicesAdapterBigItem extends RecyclerView.Adapter<DrOnlin
             } else {
                 holder.itemView.setOnClickListener((View view) -> {
                     Dialog dialog_ = doForMe.showDialog(context, R.layout.choose_payment_method_dialog);
-                    LinearLayout linearPaypal = (LinearLayout) dialog_.findViewById(R.id.linearPaypal);
+                    CardView linearPaypal = (CardView) dialog_.findViewById(R.id.linearPaypal);
                     TextView tv_chargeShow = (TextView) dialog_.findViewById(R.id.tv_chargeShow);
                     String ptext = "This service will charge you "+movie.getFees_per_unit()+"  " +CURRENCY_USD+" .Complete the payment to proceed.";
 

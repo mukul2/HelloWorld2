@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.doctor.telemedicine.Data.Data.CURRENCY_USD;
+import static com.doctor.telemedicine.Data.Data.CURRENCY_USD_SIGN;
 import static com.doctor.telemedicine.Data.Data.PHOTO_BASE;
 
 /**
@@ -65,7 +66,7 @@ public class PaymentListDoctorAdapter extends RecyclerView.Adapter<PaymentListDo
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         final PaymentModel movie = list.get(position);
         context = holder.tv_rate.getContext();
-        holder.tv_rate.setText(""+movie.getFees()+CURRENCY_USD);
+        holder.tv_rate.setText(""+movie.getFees()+CURRENCY_USD_SIGN);
         holder.tv_name.setText(movie.getPatientInfo().getName());
         holder.tv_reason.setText(movie.getServiceDetails());
         holder.tv_date.setText(movie.getCreatedAt());

@@ -45,6 +45,7 @@ public class Data {
     public static boolean isBadgeShowing = false;
     public static String NOW_HITTING_SERVICE ;
     public static String CURRENCY_USD = " USD" ;
+    public static String CURRENCY_USD_SIGN = " $" ;
     public static String PAY_PAL_CLIENT_ID = "AbZcTBiyddfmw5Cnh6oTKaURCmALlmN18LsGxz4WDZY6714koqcQNfJ2Qm-AIQNhWk-TjqstCTHpBQXD" ;
 
 
