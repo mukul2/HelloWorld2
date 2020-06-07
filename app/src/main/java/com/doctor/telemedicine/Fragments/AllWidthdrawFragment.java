@@ -20,9 +20,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.doctor.telemedicine.Activity.LoginActivity;
 import com.doctor.telemedicine.Activity.PaymentsHistoryActivity;
 import com.doctor.telemedicine.R;
 import com.doctor.telemedicine.Utils.GeneralListener;
+import com.doctor.telemedicine.Utils.MyDialog;
 import com.doctor.telemedicine.Utils.MyProgressBar;
 import com.doctor.telemedicine.Utils.doForMe;
 import com.doctor.telemedicine.adapter.PaymentListDoctorAdapter;
@@ -113,6 +115,12 @@ public class AllWidthdrawFragment extends Fragment {
                             });
 
                         }
+                    }else {
+                        MyDialog.getInstance().with(context)
+                                .message("Wallet amount exceeds !!!")
+                                .autoBack(false)
+                                .autoDismiss(false)
+                                .show();
                     }
                 }
 
