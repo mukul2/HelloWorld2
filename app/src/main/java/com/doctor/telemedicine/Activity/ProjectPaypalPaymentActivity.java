@@ -235,6 +235,7 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
         Api.getInstance().add_payment_info_only(TOKEN, USER_ID, "" + NOW_SHOWING_ONLINE_DOC.getId(), amount, "Prescription request", new ApiListener.basicApiListener() {
             @Override
             public void onBasicSuccess(StatusMessage response) {
+                Toast.makeText(context, response.getMessage(), Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getBaseContext(), PrescriptonRequestMakingActivity.class);
                 i.putExtra("paymentInfo", paymentDetails);
                 i.putExtra("amount", amount);

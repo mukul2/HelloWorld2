@@ -63,7 +63,7 @@ public class AllCollectionFragment extends Fragment {
                     recycler_view.setAdapter(mAdapter);
                     DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recycler_view.getContext(),
                             recycler_view.VERTICAL, false);
-                    recycler_view.addItemDecoration(dividerItemDecoration);
+                   // recycler_view.addItemDecoration(dividerItemDecoration);
 
                     isLoaded = true ;
                 }

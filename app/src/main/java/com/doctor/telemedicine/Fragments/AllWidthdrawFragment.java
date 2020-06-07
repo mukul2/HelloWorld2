@@ -71,9 +71,8 @@ public class AllWidthdrawFragment extends Fragment {
             recycler_view.setLayoutManager(mLayoutManager);
             recycler_view.setItemAnimator(new DefaultItemAnimator());
             recycler_view.setAdapter(mAdapter);
-            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recycler_view.getContext(),
-                    recycler_view.VERTICAL, false);
-            recycler_view.addItemDecoration(dividerItemDecoration);
+            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recycler_view.getContext(), recycler_view.VERTICAL, false);
+           // recycler_view.addItemDecoration(dividerItemDecoration);
             isLoaded = true;
         }
         //add_withdrawal_request
@@ -84,7 +83,7 @@ public class AllWidthdrawFragment extends Fragment {
             EditText ed_amount = (EditText) dialog.findViewById(R.id.ed_amount);
             EditText ed_bank = (EditText) dialog.findViewById(R.id.ed_bank);
             TextView tv_balance = (TextView) dialog.findViewById(R.id.tv_balance);
-            int balance_ = (PaymentsHistoryActivity.ALL_COLLECTION_WIDTHDRAWL.getTotal_bill() - PaymentsHistoryActivity.ALL_COLLECTION_WIDTHDRAWL.getAll_widthdraw());
+            float balance_ = (PaymentsHistoryActivity.ALL_COLLECTION_WIDTHDRAWL.getTotal_bill() - PaymentsHistoryActivity.ALL_COLLECTION_WIDTHDRAWL.getAll_widthdraw());
             String balance = "Wallet ballance :" + balance_ + CURRENCY_USD_SIGN;
             tv_balance.setText(balance);
 

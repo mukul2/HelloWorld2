@@ -3,7 +3,7 @@
     package="com.doctor.telemedicine">
 
 
-<!--    7 june 6 pm-->
+<!--    code version : 1 -->
 
     <uses-feature
         android:name="android.hardware.microphone"

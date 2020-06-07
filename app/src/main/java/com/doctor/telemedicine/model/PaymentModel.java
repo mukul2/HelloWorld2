@@ -16,7 +16,7 @@ private Integer drId;
 private Integer patientId;
 @SerializedName("fees")
 @Expose
-private Integer fees;
+private float fees;
 @SerializedName("service_id")
 @Expose
 private Integer serviceId;
@@ -60,7 +60,7 @@ public void setPatientId(Integer patientId) {
 this.patientId = patientId;
 }
 
-public Integer getFees() {
+public float getFees() {
 return fees;
 }
 

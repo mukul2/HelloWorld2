@@ -3,16 +3,16 @@ package com.doctor.telemedicine.model;
 import java.util.List;
 
 public class AllCollectionWithdraModel {
-    Integer total_bill;
+    float total_bill;
     Integer all_widthdraw;
     List<PaymentModel> bill_details;
     List<WidthdrawModel> widthdraw_details;
 
-    public Integer getTotal_bill() {
+    public float getTotal_bill() {
         return total_bill;
     }
 
-    public void setTotal_bill(Integer total_bill) {
+    public void setTotal_bill(float total_bill) {
         this.total_bill = total_bill;
     }
 
