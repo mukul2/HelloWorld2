@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.doctor.telemedicine">
 
+
+<!--    7 june 6 pm-->
+
     <uses-feature
         android:name="android.hardware.microphone"
         android:required="false" />
