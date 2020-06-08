@@ -77,9 +77,9 @@ public class PaymentsHistoryActivity extends BaseActivity {
         Api.getInstance().get_payment_list(TOKEN, USER_ID, USER_TYPE_, new ApiListener.PaymentListDownloadListener() {
             @Override
             public void onPaymentListDownloadSuccess(AllCollectionWithdraModel response) {
-                tv_total_collection.setText(""+response.getTotal_bill()+ CURRENCY_USD_SIGN);
-                tv_total_width.setText(""+response.getAll_widthdraw()+ CURRENCY_USD_SIGN);
-                tv_remaining.setText(""+(response.getTotal_bill()-response.getAll_widthdraw())+ CURRENCY_USD_SIGN);
+                tv_total_collection.setText(""+Math.floor( response.getTotal_bill())+ CURRENCY_USD_SIGN);
+                tv_total_width.setText(""+Math.floor(response.getAll_widthdraw())+ CURRENCY_USD_SIGN);
+                tv_remaining.setText(""+Math.floor(response.getTotal_bill()-response.getAll_widthdraw())+ CURRENCY_USD_SIGN);
                 ALL_COLLECTION_WIDTHDRAWL = response ;
                 setupViewPager(viewpager);
                 int selectedColor=context.getResources().getColor(R.color.black);

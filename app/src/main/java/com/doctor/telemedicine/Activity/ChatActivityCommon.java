@@ -66,6 +66,7 @@ public class ChatActivityCommon extends AppCompatActivity {
     TextView tv_user_name;
     @BindView(R.id.img_call)
     ImageView img_call;
+    String initMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,9 +90,16 @@ public class ChatActivityCommon extends AppCompatActivity {
             partner_id = b.getString("partner_id");
             partner_name = (String) b.get("partner_name");
             partner_photo = (String) b.get("partner_photo");
+            if( b.get("initMessage")!=null){
+                initMessage =  (String) b.get("initMessage");
+            }
             tv_user_name.setText(partner_name);
             roomName = createChatName(Integer.parseInt(USER_ID), Integer.parseInt(partner_id));
             initChatDatabase();
+
+            if(initMessage!=null&&initMessage.length()>0){
+                postMesage(initMessage);
+            }
 
 
         }
@@ -154,6 +162,10 @@ public class ChatActivityCommon extends AppCompatActivity {
 
     public void send(View view) {
         String msg = ed_message.getText().toString();
+            postMesage(msg);
+    }
+
+    private void postMesage(String msg) {
         if (msg.length() > 0) {
             String key = databaseReference.child(CLIEND_ID).child("chatHistory").child(roomName).push().getKey();
             ChatModel model = new ChatModel(String.valueOf(USER_ID), String.valueOf(partner_id), String.valueOf(msg), "TYPE_TEXT", String.valueOf(System.currentTimeMillis()));

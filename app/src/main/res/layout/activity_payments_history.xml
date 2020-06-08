@@ -56,7 +56,7 @@
                         android:orientation="vertical"
 
                         android:gravity="center_horizontal"
-                        android:paddingBottom="5dp"
+                        android:paddingBottom="10dp"
                         android:layout_height="match_parent">
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -66,52 +66,58 @@
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:orientation="horizontal"
+                                    android:orientation="vertical"
                                     android:paddingLeft="15dp"
                                     android:paddingRight="15dp"
                                     android:layout_height="wrap_content">
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:text="Collection : "
+                                        android:text="Collection"
                                         android:textColor="@color/white"
-                                        android:gravity="center_vertical"
+                                        android:gravity="center"
+
                                         android:textSize="17dp"
 
-                                        android:layout_gravity="center_vertical"
+                                        android:layout_gravity="center"
                                         android:layout_height="wrap_content"/>
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:textStyle="bold"
-                                        android:layout_gravity="center_vertical"
+                                        android:layout_gravity="center"
                                         android:id="@+id/tv_total_collection"
                                         android:textColor="@color/white"
-                                        android:gravity="center_vertical"
+                                        android:gravity="center"
                                         android:textSize="17dp"
+                                        android:text="00.00"
+
                                         android:layout_height="wrap_content"/>
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="wrap_content"
-                                    android:orientation="horizontal"
+                                    android:orientation="vertical"
                                     android:paddingLeft="15dp"
                                     android:paddingRight="15dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
                                     android:layout_height="wrap_content">
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:text="Withdrawal : "
+                                        android:text="Withdrawed"
                                         android:textColor="@color/white"
-                                        android:gravity="center_vertical"
+                                        android:gravity="center"
                                         android:textSize="17dp"
-                                        android:layout_gravity="center_vertical"
+                                        android:layout_gravity="center"
                                         android:layout_height="wrap_content"/>
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:textStyle="bold"
-                                        android:layout_gravity="center_vertical"
+                                        android:layout_gravity="center"
                                         android:id="@+id/tv_total_width"
                                         android:textColor="@color/white"
-                                        android:gravity="center_vertical"
+                                        android:gravity="center"
                                         android:textSize="17dp"
+                                        android:text="00.0"
                                         android:layout_height="wrap_content"/>
                                 </LinearLayout>
 

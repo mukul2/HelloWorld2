@@ -45,13 +45,11 @@ public class ChatAdapterSupportTeam extends RecyclerView.Adapter<ChatAdapterSupp
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tv_body, tv_district, tv_date, tv_attachment_count;
         LinearLayout notification_row;
-        CircleImageView image;
 
 
         public MyViewHolder(View view) {
             super(view);
             tv_body = view.findViewById(R.id.tv_body);
-            image = view.findViewById(R.id.image);
 
 
 
@@ -71,10 +69,10 @@ public class ChatAdapterSupportTeam extends RecyclerView.Adapter<ChatAdapterSupp
         if (viewType == INCOMING)
             //reverse happended
             itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.chat_outgoing, parent, false);
+                    .inflate(R.layout.chat_outgoing_support, parent, false);
         else
             itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.chat_incomming, parent, false);
+                    .inflate(R.layout.chat_incomming_support, parent, false);
         return new MyViewHolder(itemView);
     }
 

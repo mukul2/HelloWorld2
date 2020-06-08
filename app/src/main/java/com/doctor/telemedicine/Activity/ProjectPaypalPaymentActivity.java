@@ -27,6 +27,7 @@ import org.json.JSONException;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
+import static com.doctor.telemedicine.Data.Data.CURRENCY_USD_SIGN;
 import static com.doctor.telemedicine.Data.Data.PAY_PAL_CLIENT_ID;
 import static com.doctor.telemedicine.Data.DataStore.NOW_SHOWING_ONLINE_DOC;
 import static com.doctor.telemedicine.Data.DataStore.TOKEN;
@@ -217,6 +218,7 @@ public class ProjectPaypalPaymentActivity extends AppCompatActivity {
                 i.putExtra("partner_id", "" + NOW_SHOWING_ONLINE_DOC.getId());
                 i.putExtra("partner_name", NOW_SHOWING_ONLINE_DOC.getName());
                 i.putExtra("partner_photo", NOW_SHOWING_ONLINE_DOC.getPhoto());
+                i.putExtra("initMessage",amount+CURRENCY_USD_SIGN+" has been paid for Chat service");
                 context.startActivity(i);
                 finish();
 
